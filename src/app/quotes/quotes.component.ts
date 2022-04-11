@@ -12,6 +12,8 @@ export class QuotesComponent implements OnInit {
     new Quote(3, 'my third quote', 0, 0),
   ];
 
+  list: number[] = this.quotes.map(quote => quote.like)
+  most = Math.max(...this.list)
   constructor() {}
 
   ngOnInit(): void {}
