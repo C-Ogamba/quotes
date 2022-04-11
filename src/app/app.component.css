@@ -1,0 +1,10 @@
+.landing {
+    background-image: url('../assets/children.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+   
+}
+.text-center{
+    color: orange;
+}

@@ -7,13 +7,34 @@ import { Quote } from '../quote';
 })
 export class QuotesComponent implements OnInit {
   quotes: Quote[] = [
-    new Quote(1, 'my first quote', 0, 0),
-    new Quote(2, 'my second quote', 0, 0),
-    new Quote(3, 'my third quote', 0, 0),
+    new Quote(
+      'Soren Kierkegaard',
+      'Life is not a problem to be solved, but a reality to be experienced.',
+      0,
+      0
+    ),
+    new Quote(
+      'Jack Kerouac',
+      'Maybe that is what life is… a wink of the eye and winking stars.',
+      0,
+      0
+    ),
+    new Quote(
+      ' Buddha',
+      'Health is the greatest gift, contentment the greatest wealth, faithfulness the best relationship.',
+      0,
+      0
+    ),
   ];
 
-  list: number[] = this.quotes.map(quote => quote.like)
-  most = Math.max(...this.list)
+  list: number[] = this.quotes.map((quote) => quote.like);
+  most = Math.max(...this.list);
+  like(i) {
+    this.quotes[i].like += 1;
+  }
+  dislike(i){
+    this.quotes[i].dislike += 1;
+  }
   constructor() {}
 
   ngOnInit(): void {}

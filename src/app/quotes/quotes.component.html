@@ -1,20 +1,23 @@
 <div
-  *ngFor="let quote of quotes"
-  class="container shadow col-md-8 border card mt-5"
+  *ngFor="let quote of quotes; let i = index" 
+  class="container shadow col-md-8 border card mt-5 mb-5"
 >
-  <div *ngIf="quote.id == 1; then highlight; else empty"></div>
+<div class="backimage"></div>
+  <div *ngIf="quote.like == 1; then highlight; else empty"></div>
   <ng-template #highlight>
     <div class="frame">
+      <p>{{ quote.author}}</p>
       <p appHighlight>{{ quote.quote }}</p>
-      <span class="btn btn-outline-success m-1">like: {{ quote.like }}</span>
-      <span class="btn btn-outline-danger m-1">dislike: {{ quote.dislike }}</span>
+      <button class="btn btn-outline-success m-1" (click)="like(i)">like: {{ quote.like }}</button>
+      <button class="btn btn-outline-danger m-1" (click)="dislike(i)">dislike: {{ quote.dislike }}</button>
     </div>
   </ng-template>
   <ng-template #empty>
     <div class="frame">
+       <p class="text">{{ quote.author}}</p>
       <p appHighlight>{{ quote.quote }}</p>
-      <span class="btn btn-outline-success m-1">like: {{ quote.like }}</span>
-      <span class="btn btn-outline-danger m-1">dislike: {{ quote.dislike }}</span>
+      <button class="btn btn-outline-success m-1"(click)="like(i)">like: {{ quote.like }}</button>
+      <button class="btn btn-outline-danger m-1"(click)="dislike(i)">dislike: {{ quote.dislike }}</button>
     </div>
   </ng-template>
   <app-quote-detail [quote]="quote"></app-quote-detail>

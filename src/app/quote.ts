@@ -1,10 +1,10 @@
 export class Quote {
-    id: number;
+    author: string;
     quote: string;
     like: number;
     dislike: number;
-    constructor(id:number, quote:string, like: number, dislike: number){
-        this.id = id;
+    constructor(author:string, quote:string, like: number, dislike: number){
+        this.author = author;
         this.quote = quote;
         this.like= like;
         this.dislike = dislike;
