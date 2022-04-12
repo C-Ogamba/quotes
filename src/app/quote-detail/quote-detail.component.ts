@@ -7,14 +7,10 @@ import { Quote } from '../quote';
   styleUrls: ['./quote-detail.component.css'],
 })
 export class QuoteDetailComponent implements OnInit {
-  @Input() quote!: Quote;
-  @Output() deleteThis = new EventEmitter<boolean>();
-
-  deleteQuote(remove: boolean) {
-    this.deleteThis.emit(remove);
-  }
+ 
   like = 0;
   dislike = 0;
+  quote: any;
 
   liking() {
     this.like++;
@@ -22,6 +18,7 @@ export class QuoteDetailComponent implements OnInit {
   disliking() {
     this.dislike++;
   }
+ 
   constructor() {}
 
   ngOnInit(): void {}

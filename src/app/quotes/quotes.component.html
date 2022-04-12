@@ -18,9 +18,10 @@
        <p class="text">{{ quote.author}}</p>
       <p appHighlight>{{ quote.quote }}</p>
       <!-- <button class="btn btn-outline-success m-1"(click)="like(i)">like: {{ quote.like }}</button>
-      <button class="btn btn-outline-danger m-1"(click)="dislike(i)">dislike: {{ quote.dislike }}</button>
-      <p>{{ quote.date }}</p> -->
+      <button class="btn btn-outline-danger m-1"(click)="dislike(i)">dislike: {{ quote.dislike }}</button> -->
+       <app-delete (isComplete)="deleteQuote ($event, i)"  ></app-delete>
+      <!-- <p>{{ quote.date }}</p> -->
     </div>
   </ng-template>
-  <app-quote-detail [quote]="quote"></app-quote-detail>
+  <app-quote-detail ></app-quote-detail>
 </div>
