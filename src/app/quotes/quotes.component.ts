@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input,EventEmitter } from '@angular/core';
 import { Quote } from '../quote';
 @Component({
   selector: 'app-quotes',
@@ -29,7 +29,7 @@ export class QuotesComponent implements OnInit {
       new Date(2022, 5, 22)
     ),
   ];
-  deleteQuote(isComplete:any, index:number) {
+  deleteQuote(isComplete: any, index: number) {
     if (isComplete) {
       let toDelete = confirm(
         `Are you sure you want to delete ${this.quotes[index].quote}?`
@@ -40,7 +40,11 @@ export class QuotesComponent implements OnInit {
       }
     }
   }
-
+  submitQuote(quote: Quote) {
+    let quoteLength = this.quotes.length;
+    // quote = quoteLength + 1;
+    this.quotes.push(quote);
+  }
   list: number[] = this.quotes.map((quote) => quote.like);
   most = Math.max(...this.list);
   like(i) {
@@ -49,6 +53,7 @@ export class QuotesComponent implements OnInit {
   dislike(i) {
     this.quotes[i].dislike += 1;
   }
+
   constructor() {}
 
   ngOnInit(): void {}

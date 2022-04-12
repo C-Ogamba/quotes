@@ -1,3 +1,48 @@
-.text{
-    color: orange;
+#sample {
+    
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 8px #888888;
+  border-radius: 25px;
+  color: #fff;
+  background-color: transparent;
+  transition: 0.3s;
+
+}
+#sample:hover {
+  background-color: rgb(56, 43, 32);
+  color: white;
+}
+.quote-date {
+  width: 190px;
+  background-color: rgb(122, 46, 2);
+  padding-left: 3%;
+}
+
+.hero-text {
+  font-family: "Rye", cursive;
+  font-weight: bold;
+}
+
+.text {
+  font-weight: bold;
+  font-family: "Tulpen One", cursive;
+  font-size: 20px;
+}
+.left {
+  font-size: 20px;
+}
+.author {
+  margin-left: 60%;
+  margin-bottom: 75px;
+}
+.author1 {
+  font-family: "Dancing Script";
+  color: orange;
+}
+.card-footer {
+  margin-top: 10%;
+}
+.space {
+  margin-right: 9%;
 }

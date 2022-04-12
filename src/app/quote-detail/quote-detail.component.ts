@@ -7,7 +7,6 @@ import { Quote } from '../quote';
   styleUrls: ['./quote-detail.component.css'],
 })
 export class QuoteDetailComponent implements OnInit {
- 
   like = 0;
   dislike = 0;
   quote: any;
@@ -18,7 +17,18 @@ export class QuoteDetailComponent implements OnInit {
   disliking() {
     this.dislike++;
   }
- 
+  // deleteQuote(isComplete: any, index: number) {
+  //   if (isComplete) {
+  //     let toDelete = confirm(
+  //       `Are you sure you want to delete ${this.quote[index].quote}?`
+  //     );
+
+  //     if (toDelete) {
+  //       this.quote.splice(index, 1);
+  //     }
+  //   }
+  // }
+
   constructor() {}
 
   ngOnInit(): void {}

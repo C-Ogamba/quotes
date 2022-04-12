@@ -10,18 +10,10 @@ export class DeleteComponent implements OnInit {
   @Input() quote!: Quote;
   @Output() isComplete = new EventEmitter<boolean>();
 
-  deleteQuote(isComplete: any, index: number) {
-    if (isComplete) {
-      let toDelete = confirm(
-        `Are you sure you want to delete ${this.quote[index].quote}?`
-      );
-
-      if (toDelete) {
-        this.quote.splice(index, 1);
-      }
-    }
-  }
-
+ 
+deleteQuote(complete: boolean){
+  this.isComplete.emit(complete)
+}
   constructor() {}
 
   ngOnInit(): void {}
