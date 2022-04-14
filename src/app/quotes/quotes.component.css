@@ -9,6 +9,18 @@
   transition: 0.3s;
 
 }
+.uno{
+  background-color: rgb(56, 43, 32);
+  border-radius: 25px;
+
+  color:#fff
+}
+.foot{
+  margin-top: 10%;
+}
+.card{
+  width:500px;
+}
 #sample:hover {
   background-color: rgb(56, 43, 32);
   color: white;

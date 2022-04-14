@@ -1,25 +1,54 @@
 <div class="frame container mt-3">
-    <div class="">
-        <h2 class=" hero-text text-center mb-2"><i class="fa fa-quote-left p-3" aria-hidden="true"></i>Where there is love there is life.</h2>
-        <p class=" hero-text text-center mb-5 h5" >by ~ Mahatma Gandhi.</p>
-        <div class="col-md-12" *ngFor='let quote of quotes; let i =index'>
-            <div id="sample" class="card mb-5">
-                <p class=" m-4 lead"><span class="text"><i class="fa fa-quote-left" aria-hidden="true"></i>
-                </span> {{quote.quote}} <span class="author1">  by ~ {{quote.author}}</span></p>
-                <div class=" mx-4 col-4">
-                    <div class="quote-date card">
-                        <p class="date">Submitted on {{quote.date | dateCount}}</p>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <button id="like" class="btn btn-outline-success" (click)="like(i)"><i class="fa fa-thumbs-up" aria-hidden="true"></i> like <span class="upvote">{{quote.like}}</span></button> 
-                    <button id="dislike" class=" mx-3 btn btn-outline-danger" (click)="dislike(i)"><i class="fa fa-thumbs-down" aria-hidden="true"></i> Dislike <span class="upvote">{{quote.dislike}}</span></button> 
-                    <app-delete [quote]='quote' (isComplete)="deleteQuote($event,i)"></app-delete>
-                </div>
+  <div class="row">
+    <h2 class="hero-text text-center mb-2">
+      <i class="fa fa-quote-left p-3" aria-hidden="true"></i>Where there is love
+      there is life.
+    </h2>
+    <p class="hero-text text-center mb-5 h5">by ~ Mahatma Gandhi.</p>
+    <div class="col-md" *ngFor="let quote of quotes; let i = index">
+      <div>
+        <div id="sample" class="card mb-5">
+          <p class="m-4 lead">
+            <span class="text"
+              ><i class="fa fa-quote-left" aria-hidden="true"></i>
+            </span>
+            {{ quote.quote }}
+            <span class="author1"> by ~ {{ quote.author }}</span>
+          </p>
+          <div class="mx-4 col-4">
+            <div class="quote-date card">
+              <p class="date">Submitted {{ quote.date | date | date }}</p>
             </div>
+          </div>
+          <div class="card-footer">
+            <button id="like" class="btn btn-outline-success" (click)="like(i)">
+              <i class="fa fa-thumbs-up" aria-hidden="true"></i> like
+              <span class="upvote">{{ quote.like }}</span>
+            </button>
+            <button
+              id="dislike"
+              class="mx-3 btn btn-outline-danger"
+              (click)="dislike(i)"
+            >
+              <i class="fa fa-thumbs-down" aria-hidden="true"></i> Dislike
+              <span class="upvote">{{ quote.dislike }}</span>
+            </button>
+            <app-delete
+              [quote]="quote"
+              (isComplete)="deleteQuote($event, i)"
+            ></app-delete>
+          </div>
         </div>
-        <div class="col-md-12">
-            <app-quote-form (addQuote)="submitQuote($event)"></app-quote-form>
-        </div>
+      </div>
     </div>
+    <div class="col">
+      <div class="uno card">
+        <app-quote-form (addQuote)="submitQuote($event)"></app-quote-form>
+      </div>
+    </div>
+  </div>
+  <footer class="foot row d-flex text-center justify-content-center text-warning">
+    <hr />
+    <p>Designed by cindy k &copy; 2022</p>
+  </footer>
 </div>
